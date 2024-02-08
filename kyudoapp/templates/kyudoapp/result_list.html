@@ -1,0 +1,40 @@
+{% extends "layout.html" %} {% block content %}
+<div class="result-list__container">
+  <h2>記録一覧</h2>
+
+  <table class="result-table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">甲矢（位置）</th>
+        <th scope="col">甲矢（当たり）</th>
+        <th scope="col">乙矢（位置）</th>
+        <th scope="col">乙矢（当たり）</th>
+        <th scope="col">メモ</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for rs in results %}
+      <tr>
+        <th scope="row">{{ rs.id }}</th>
+        <td>{{ rs.position1 }}</td>
+        <td>{{ rs.atari1 }}</td>
+        <td>{{rs.position2}}</td>
+        <td>{{rs.atari2}}</td>
+        <td>{{rs.memo}}</td>
+        <td>
+          <form action="{{ url_for('result_edit', id=rs.id) }}" method="POST">
+            <input class="btn btn-danger btn-sm" type="submit" value="編集"/>
+          </form>
+        </td>
+        <td>
+          <form action="{{ url_for('result_delete', id=rs.id) }}" method="POST">
+            <input class="btn btn-danger btn-sm" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16" value="消去"></input>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

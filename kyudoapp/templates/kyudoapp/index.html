@@ -1,0 +1,15 @@
+{% extends "layout.html" %} {% block content %}
+<h2>{{ today }}</h2>
+<h3>過去のお稽古記録</h3>
+
+<div class="shasu_w">
+  <h4>一週間の射数</h4>
+  {% if data %} {{ table | safe }}
+  <img src="data:image/png;base64,{{ data }}" />
+  {% endif %}
+</div>
+<p>{{ t_ave }}</p>
+<p>{{ y_ave }}</p>
+<p>{{ w_ave }}</p>
+<p>{{ m_ave }}</p>
+{% endblock %}

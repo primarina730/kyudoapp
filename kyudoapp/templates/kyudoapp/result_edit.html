@@ -1,0 +1,138 @@
+{% extends "layout.html" %} {% block content %}
+<div class="result-edit__container">
+  <h2>お稽古データ編集</h2>
+  <form action="{{ url_for('result_update', id=rs.id) }}" method="POST">
+    <div class="haya">
+      <h3 class="haya-title">甲矢</h3>
+      <div class="select-position">
+        <h4 class="select-title">位置</h4>
+        <div class="position__container">
+          <input type="radio" class="radiobutton" id="zero-1" name="position-1"
+          value="0" {% if rs.position1==0 %}checked{% endif %} />
+          <label for="zero-1">０時</label>
+          <input type="radio" class="radiobutton" id="one-1" name="position-1"
+          value="1" {% if rs.position1==1 %}checked{% endif %} />
+          <label for="one-1">１時</label>
+          <input type="radio" class="radiobutton" id="two-1" name="position-1"
+          value="2" {% if rs.position1==2 %}checked{% endif %} />
+          <label for="two-1">２時</label>
+          <input type="radio" class="radiobutton" id="three-1" name="position-1"
+          value="3" {% if rs.position1==3 %}checked{% endif %} />
+          <label for="three-1">３時</label>
+          <input type="radio" class="radiobutton" id="four-1" name="position-1"
+          value="4" {% if rs.position1==4 %}checked{% endif %} />
+          <label for="four-1">４時</label>
+          <input type="radio" class="radiobutton" id="five-1" name="position-1"
+          value="5" {% if rs.position1==5 %}checked{% endif %} />
+          <label for="five-1">５時</label>
+          <input type="radio" class="radiobutton" id="six-1" name="position-1"
+          value="6" {% if rs.position1==6 %}checked{% endif %} />
+          <label for="six-1">６時</label>
+          <input type="radio" class="radiobutton" id="seven-1" name="position-1"
+          value="7" {% if rs.position1==7 %}checked{% endif %} />
+          <label for="seven-1">７時</label>
+          <input type="radio" class="radiobutton" id="eight-1" name="position-1"
+          value="8" {% if rs.position1==8 %}checked{% endif %} />
+          <label for="eight-1">８時</label>
+          <input type="radio" class="radiobutton" id="nine-1" name="position-1"
+          value="9" {% if rs.position1==9 %}checked{% endif %} />
+          <label for="nine-1">９時</label>
+          <input type="radio" class="radiobutton" id="ten-1" name="position-1"
+          value="10" {% if rs.position1==10 %}checked{% endif %} />
+          <label for="ten-1">10時</label>
+          <input type="radio" class="radiobutton" id="eleven-1"
+          name="position-1" value="11" {% if rs.position1==11 %}checked{% endif
+          %} />
+          <label for="eleven-1">11時</label>
+          <input type="radio" class="radiobutton" id="zuboshi-1"
+          name="position-1" value="12" {% if rs.position1==12 %}checked{% endif
+          %} />
+          <label for="zuboshi-1">図星</label>
+        </div>
+      </div>
+      <div class="select-atari">
+        <h4 class="select-title">結果</h4>
+        <div class="atari__container">
+          <input type="radio" class="radiobutton" id="atari-1" name="atari-1"
+          value="1" {% if rs.atari1==1 %}checked{% endif %} />
+          <label for="atari-1">中り</label>
+          <input type="radio" class="radiobutton" id="hazure-1" name="atari-1"
+          value="0" {% if rs.atari1==0 %}checked{% endif %} />
+          <label for="hazure-1">外れ</label>
+        </div>
+      </div>
+    </div>
+    <div class="oto">
+      <h3 class="oto-title">乙矢</h3>
+      <div class="select-position">
+        <h4 class="select-title">位置</h4>
+        <div class="position__container">
+          <input type="radio" class="radiobutton" id="zero-2" name="position-2"
+          value="0" {% if rs.position2==0 %}checked{% endif %} />
+          <label for="zero-2">０時</label>
+          <input type="radio" class="radiobutton" id="one-2" name="position-2"
+          value="1" {% if rs.position2==1 %}checked{% endif %} />
+          <label for="one-2">１時</label>
+          <input type="radio" class="radiobutton" id="two-2" name="position-2"
+          value="2" {% if rs.position2==2 %}checked{% endif %} />
+          <label for="two-2">２時</label>
+          <input type="radio" class="radiobutton" id="three-2" name="position-2"
+          value="3" {% if rs.position2==3 %}checked{% endif %} />
+          <label for="three-2">３時</label>
+          <input type="radio" class="radiobutton" id="four-2" name="position-2"
+          value="4" {% if rs.position2==4 %}checked{% endif %} />
+          <label for="four-2">４時</label>
+          <input type="radio" class="radiobutton" id="five-2" name="position-2"
+          value="5" {% if rs.position2==5 %}checked{% endif %} />
+          <label for="five-2">５時</label>
+          <input type="radio" class="radiobutton" id="six-2" name="position-2"
+          value="6" {% if rs.position2==6 %}checked{% endif %} />
+          <label for="six-2">６時</label>
+          <input type="radio" class="radiobutton" id="seven-2" name="position-2"
+          value="7" {% if rs.position2==7 %}checked{% endif %} />
+          <label for="seven-2">７時</label>
+          <input type="radio" class="radiobutton" id="eight-2" name="position-2"
+          value="8" {% if rs.position2==8 %}checked{% endif %} />
+          <label for="eight-2">８時</label>
+          <input type="radio" class="radiobutton" id="nine-2" name="position-2"
+          value="9" {% if rs.position2==9 %}checked{% endif %} />
+          <label for="nine-2">９時</label>
+          <input type="radio" class="radiobutton" id="ten-2" name="position-2"
+          value="10" {% if rs.position2==10 %}checked{% endif %} />
+          <label for="ten-2">10時</label>
+          <input type="radio" class="radiobutton" id="eleven-2"
+          name="position-2" value="11" {% if rs.position2==11 %}checked{% endif
+          %} />
+          <label for="eleven-2">11時</label>
+          <input type="radio" class="radiobutton" id="zuboshi-2"
+          name="position-2" value="11" {% if rs.position2==12 %}checked{% endif
+          %} />
+          <label for="zuboshi-2">図星</label>
+        </div>
+      </div>
+      <div class="select-atari">
+        <h4 class="select-title">結果</h4>
+        <div class="atari__container">
+          <input type="radio" class="radiobutton" id="atari-2" name="atari-2"
+          value="1" {% if rs.atari2==1 %}checked{% endif %} />
+          <label for="atari-2">中り</label>
+          <input type="radio" class="radiobutton" id="hazure-2" name="atari-2"
+          value="0" {% if rs.atari2==0 %}checked{% endif %} />
+          <label for="hazure-2">外れ</label>
+        </div>
+      </div>
+    </div>
+
+    <table border="1">
+      <tr>
+        <th>memo</th>
+      </tr>
+      <tr class="okeiko__input-data">
+        <td><input type="text" name="memo" value="{{rs.memo}}" /></td>
+      </tr>
+    </table>
+    <br />
+    <input type="submit" value="登録" />
+  </form>
+</div>
+{% endblock %}
