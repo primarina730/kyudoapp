@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, url_for
+from flask import render_template, request, redirect, url_for, Flask
 from kyudoapp import app
 from kyudoapp import db
 from kyudoapp.models.result import Result
@@ -15,6 +15,10 @@ import base64
 from io import BytesIO
 import sqlalchemy as sq
 import random
+
+app = Flask(__name__)
+if __name__ == '__main__':
+    app.run()
 
 
 @app.route('/')
