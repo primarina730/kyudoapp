@@ -1,1 +1,64 @@
-/*# sourceMappingURL=index.css.map */
+.index__container {
+  width: 80%;
+  margin: 0 auto;
+}
+.index__container .today {
+  text-align: center;
+}
+.index__container .graph-percent__container {
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+.index__container .graph-percent__container .shasu_w {
+  padding-top: 2%;
+}
+.index__container .graph-percent__container .tekichu-memo__container {
+  margin: auto 0;
+  padding-top: 2%;
+}
+.index__container .graph-percent__container .tekichu-memo__container .past-table__container {
+  padding-top: 10%;
+}
+.index__container .index__start {
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .index__container {
+    padding-bottom: 20%;
+  }
+  .index__container .graph-percent__container {
+    display: flex;
+    flex-direction: column;
+  }
+  .index__container .graph-percent__container .shasu_w h2 {
+    font-size: 1rem;
+  }
+  .index__container .graph-percent__container .shasu_w img {
+    width: 100%;
+  }
+  .index__container .graph-percent__container .tekichu-memo__container {
+    margin: auto 0;
+    padding-top: 2%;
+  }
+  .index__container .graph-percent__container .tekichu-memo__container .past-table__container {
+    padding-top: 10%;
+  }
+  .index__container .graph-percent__container .card {
+    margin-top: 5%;
+  }
+  .index__container .graph-percent__container .card .card-body {
+    padding: 3%;
+  }
+  .index__container .graph-percent__container .card .card-body .card-title {
+    font-size: 1rem;
+  }
+  .index__container .graph-percent__container .card .card-body .card-text {
+    font-size: 0.8rem;
+  }
+  .index__container .index__start {
+    text-align: center;
+  }
+}/*# sourceMappingURL=index.css.map */

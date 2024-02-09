@@ -1,0 +1,55 @@
+.add__container{
+
+    width: fit-content;
+    margin: 0 auto;
+    .haya-oto{
+        width: 100%;
+        .oto-title{
+            padding-top: 2%;
+        }
+        .select-title{
+            padding-top: 1%;
+        }
+        .okeiko__memo{
+            width: 60%;
+            padding-top: 2%;
+        }
+        .add-button__container{
+            text-align: center;
+        }
+        
+    }
+
+}
+
+@media screen and (max-width:768px) {
+    .add__container{
+        width: 80%;
+        .add__title{
+            font-size: 1rem;
+        }
+        .haya-oto{
+            .haya,.oto{
+                .select-position,.select-atari{
+                    .select-title{
+                        padding-top: 2%;
+                        font-size: 0.8rem;
+                    }
+                }
+                .haya-title,.oto-title{
+                    padding-top: 5%;
+                    font-size: 1rem;
+                }
+
+                label{
+                    font-size: 0.8rem;
+                }
+        }
+        .okeiko__memo{
+            width: 100%;
+            padding-top: 5%;
+        }
+        }
+        padding-bottom: 20%;
+    }
+}

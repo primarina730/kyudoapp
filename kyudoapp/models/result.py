@@ -5,8 +5,9 @@ from datetime import datetime
 class Result(db.Model):
     __tablename__ = 'result'
     id = db.Column(db.Integer, primary_key=True)
-    created_at = db.Column(db.DateTime, nullable=False, default=datetime.now)
-    updated_at = db.Column(db.DateTime, nullable=False,
+    created_at = db.Column(db.Date,
+                           nullable=False, default=datetime.now)
+    updated_at = db.Column(db.Date, nullable=False,
                            default=datetime.now, onupdate=datetime.now)
     position1 = db.Column(db.Integer, default="20")
     atari1 = db.Column(db.Integer, default="3")

@@ -1,0 +1,46 @@
+.add__container {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+.add__container .haya-oto {
+  width: 100%;
+}
+.add__container .haya-oto .oto-title {
+  padding-top: 2%;
+}
+.add__container .haya-oto .select-title {
+  padding-top: 1%;
+}
+.add__container .haya-oto .okeiko__memo {
+  width: 60%;
+  padding-top: 2%;
+}
+.add__container .haya-oto .add-button__container {
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .add__container {
+    width: 80%;
+    padding-bottom: 20%;
+  }
+  .add__container .add__title {
+    font-size: 1rem;
+  }
+  .add__container .haya-oto .haya .select-position .select-title, .add__container .haya-oto .haya .select-atari .select-title, .add__container .haya-oto .oto .select-position .select-title, .add__container .haya-oto .oto .select-atari .select-title {
+    padding-top: 2%;
+    font-size: 0.8rem;
+  }
+  .add__container .haya-oto .haya .haya-title, .add__container .haya-oto .haya .oto-title, .add__container .haya-oto .oto .haya-title, .add__container .haya-oto .oto .oto-title {
+    padding-top: 5%;
+    font-size: 1rem;
+  }
+  .add__container .haya-oto .haya label, .add__container .haya-oto .oto label {
+    font-size: 0.8rem;
+  }
+  .add__container .haya-oto .okeiko__memo {
+    width: 100%;
+    padding-top: 5%;
+  }
+}/*# sourceMappingURL=add_result.css.map */

@@ -1,15 +1,83 @@
 {% extends "layout.html" %} {% block content %}
-<h2>{{ today }}</h2>
-<h3>過去のお稽古記録</h3>
-
-<div class="shasu_w">
-  <h4>一週間の射数</h4>
+<div class="index__container">
+  <p class="today">{{ today }}</p>
   {% if data %} {{ table | safe }}
-  <img src="data:image/png;base64,{{ data }}" />
+  <div class="graph-percent__container">
+    <div class="shasu_w">
+      <h2>一週間の射数</h2>
+
+      <img src="data:image/png;base64,{{ data }}" />
+    </div>
+    <div class="tekichu-memo__container">
+      <div class="card" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title">過去の一言</h5>
+          <p class="card-text">{{past_memo}}</p>
+        </div>
+      </div>
+      <div class="past-table__container">
+        <table class="table caption-top">
+          <caption>
+            的中率
+          </caption>
+          <tbody></tbody>
+          <tbody>
+            <th scope="row">今日</th>
+            {% if t_ave!=200 %}
+            <td>{{ t_ave }}％</td>
+            {%else%}
+            <td>No data</td>
+            {%endif%}
+            <tr>
+              <th scope="row">昨日</th>
+              {% if y_ave!=200 %}
+              <td>{{y_ave}}％</td>
+              {%else%}
+              <td>No data</td>
+              {%endif%}
+            </tr>
+            <tr>
+              <th scope="row">直近一週間</th>
+              {% if w_ave!=200 %}
+              <td>{{w_ave}}％</td>
+              {%else%}
+              <td>No data</td>
+              {%endif%}
+            </tr>
+            <tr>
+              <th scope="row">直近一カ月</th>
+              {% if m_ave!=200 %}
+              <td>{{ m_ave }}％</td>
+              {%else%}
+              <td>No data</td>
+              {%endif%}
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  {%else%}
+  <div class="index__start">
+    <p>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-plus-square"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+        />
+        <path
+          d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+        /></svg
+      >ボタンを押して記録を始めよう
+    </p>
+  </div>
+
   {% endif %}
 </div>
-<p>{{ t_ave }}</p>
-<p>{{ y_ave }}</p>
-<p>{{ w_ave }}</p>
-<p>{{ m_ave }}</p>
 {% endblock %}

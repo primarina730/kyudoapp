@@ -14,6 +14,7 @@ from matplotlib.dates import DateFormatter
 import base64
 from io import BytesIO
 import sqlalchemy as sq
+import random
 
 
 @app.route('/')
@@ -30,9 +31,10 @@ def index():
         df = pd.DataFrame(result_db)
         df['created_at'] = pd.to_datetime(df['created_at'])
         df['created_at'] = df['created_at'].dt.date
+        past_memo = random.choice(result_db)['memo']
 
         def check_atari(value):
-            return 1 if value != 3 else 0
+            return 1 if value != 2 else 0
 
         df['atari1_check'] = df['atari1'].apply(check_atari)
         df['atari2_check'] = df['atari2'].apply(check_atari)
@@ -53,16 +55,26 @@ def index():
         dfy = df[df["created_at"] == yday]
         dfw = df[df["created_at"] > wago]
         dfm = df[df["created_at"] > mago]
-
-        t_ave = ((dft["atari1"] == 1).sum()+(dft["atari2"] == 1).sum()
-                 )/(dft["yakazu"].sum())
-        y_ave = ((dfy["atari1"] == 1).sum()+(dfy["atari2"] == 1).sum()
-                 )/(dfy["yakazu"].sum())
-        w_ave = ((dfw["atari1"] == 1).sum()+(dfw["atari2"] == 1).sum()
-                 )/(dfw["yakazu"].sum())
-        m_ave = ((dfm["atari1"] == 1).sum()+(dfm["atari2"] == 1).sum()
-                 )/(dfm["yakazu"].sum())
-
+        if not dft.empty:
+            t_ave = int(round(((dft["atari1"] == 1).sum()+(dft["atari2"] == 1).sum()
+                               )/(dft["yakazu"].sum()), 2)*100)
+        else:
+            t_ave = 200
+        if not dfy.empty:
+            y_ave = int(round(((dfy["atari1"] == 1).sum()+(dfy["atari2"] == 1).sum()
+                               )/(dfy["yakazu"].sum()), 2)*100)
+        else:
+            y_ave = 200
+        if not dfw.empty:
+            w_ave = int(round(((dfw["atari1"] == 1).sum()+(dfw["atari2"] == 1).sum()
+                               )/(dfw["yakazu"].sum()), 2)*100)
+        else:
+            w_ave = 200
+        if not dfm.empty:
+            m_ave = int(round(((dfm["atari1"] == 1).sum()+(dfm["atari2"] == 1).sum()
+                               )/(dfm["yakazu"].sum()), 2)*100)
+        else:
+            m_ave = 200
         x = daily_count["date"]
         y = daily_count["yakazu_count"]
         fig = Figure()
@@ -78,7 +90,7 @@ def index():
         data = base64.b64encode(buf.getbuffer()).decode("ascii")
         today_f = today.strftime("%Y年%m月%d日")
 
-        return render_template('kyudoapp/index.html', t_ave=t_ave, y_ave=y_ave, w_ave=w_ave, m_ave=m_ave, today=today_f, data=data)
+        return render_template('kyudoapp/index.html', t_ave=t_ave, y_ave=y_ave, w_ave=w_ave, m_ave=m_ave, today=today_f, data=data, past_memo=past_memo)
     else:
         return render_template('kyudoapp/index.html')
 

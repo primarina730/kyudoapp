@@ -1,0 +1,42 @@
+.result-list__container {
+  width: 80%;
+  margin: 0 auto;
+}
+.result-list__container .result-table tr td, .result-list__container .result-table tr th {
+  padding: 10px;
+}
+.result-list__container .result-table .atari__td {
+  color: red;
+}
+.result-list__container .result-table .hazure__td {
+  color: blue;
+}
+.result-list__container .result-table .z__td {
+  background-color: yellow;
+}
+.result-list__container .button__edit {
+  background-color: chartreuse;
+  border-color: black;
+  color: black;
+}
+.result-list__container .button__delete {
+  border-color: black;
+}
+
+@media screen and (max-width: 768px) {
+  .result-list__container .list__title {
+    font-size: 1rem;
+  }
+  .result-list__container .result-table .list__column-name tr th {
+    font-size: 0.4rem;
+    padding: 2px;
+    white-space: nowrap;
+  }
+  .result-list__container .result-table .table-group-divider tr td {
+    font-size: 0.6rem;
+    padding: 2px;
+  }
+  .result-list__container .result-table .table-group-divider tr .position__td {
+    white-space: nowrap;
+  }
+}/*# sourceMappingURL=result_list.css.map */

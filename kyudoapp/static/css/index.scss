@@ -1,0 +1,72 @@
+.index__container{
+    width: 80%;
+    margin: 0 auto;
+    .today{
+        text-align: center;
+    }
+    .graph-percent__container{
+        display: flex;
+        width: fit-content;
+        margin: 0 auto;
+        .shasu_w{
+            padding-top: 2%;
+        }
+        
+        .tekichu-memo__container{
+            margin: auto 0;
+            padding-top: 2%;
+            .past-table__container{
+                padding-top: 10%;
+            }
+            
+        }
+    }
+
+    .index__start{
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:768px) {
+
+    .index__container{
+        padding-bottom: 20%;
+    .graph-percent__container{
+        display: flex;
+        flex-direction: column;
+        .shasu_w{
+            h2{
+                font-size: 1rem;
+            }
+            img{
+                width: 100%;
+            }
+        }
+        
+        .tekichu-memo__container{
+            margin: auto 0;
+            padding-top: 2%;
+            .past-table__container{
+                padding-top: 10%;
+            }
+            
+        }
+        .card{
+            margin-top: 5%;
+        .card-body{
+            padding: 3%;
+            .card-title{
+                font-size: 1rem;
+            }
+            .card-text{
+                font-size: 0.8rem;
+            }
+        }
+        }
+    }
+
+    .index__start{
+        text-align: center;
+    }
+}
+}
