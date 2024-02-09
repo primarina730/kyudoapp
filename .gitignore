@@ -9,3 +9,5 @@ instance
 config.py
 
 db.sqlite3
+
+/venv/
